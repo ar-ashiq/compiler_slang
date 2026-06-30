@@ -9,7 +9,7 @@ import slang.lexer.Token;
 public class Main {
     public static void main(String[] args) {
 //        step1AST();
-        step2PrintTokens("2 * 3 a+ (44+25- 3)");
+        step2PrintTokens("2 * 3 + (44+25- 3)");
     }
 
     private static void step2PrintTokens(String expression) {
@@ -39,7 +39,7 @@ public class Main {
                 new BinaryExp(
                         new NumericConstant(5),
                         new NumericConstant(3),
-                        Operator.MUL).evaluate(),
+                        Operator.MUL),
                 Operator.SUB
         );
         ans = ex.evaluate();
