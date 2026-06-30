@@ -1,6 +1,6 @@
 package slang.expressions;
 
-public class NumericConstant extends Expression{
+public class NumericConstant extends Exp {
     private final double _value;
     public NumericConstant(double n){
         _value = n;

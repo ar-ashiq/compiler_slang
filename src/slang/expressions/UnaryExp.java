@@ -2,12 +2,12 @@ package slang.expressions;
 
 import slang.Operator;
 
-public class UnaryExpression extends Expression{
+public class UnaryExp extends Exp {
 
     private final double _value1;
     private final Operator _op;
 
-    public UnaryExpression(double n, Operator op) {
+    public UnaryExp(double n, Operator op) {
         _value1 = n;
         _op = op;
     }

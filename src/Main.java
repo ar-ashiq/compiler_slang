@@ -1,8 +1,8 @@
 import slang.Operator;
-import slang.expressions.BinaryExpression;
-import slang.expressions.Expression;
+import slang.expressions.BinaryExp;
+import slang.expressions.Exp;
 import slang.expressions.NumericConstant;
-import slang.expressions.UnaryExpression;
+import slang.expressions.UnaryExp;
 import slang.lexer.Lexer;
 import slang.lexer.Token;
 
@@ -26,17 +26,17 @@ public class Main {
     }
 
     private static void step1AST(){
-        Expression ex;
+        Exp ex;
 //       arithmetic expression 2+3
-        ex = new BinaryExpression(
+        ex = new BinaryExp(
                 new NumericConstant(2), new NumericConstant(3), Operator.ADD
         );
         double ans = ex.evaluate();
         System.out.println(ans);
 
 //        arithmetic expression -(5*3)
-        ex = new UnaryExpression(
-                new BinaryExpression(
+        ex = new UnaryExp(
+                new BinaryExp(
                         new NumericConstant(5),
                         new NumericConstant(3),
                         Operator.MUL).evaluate(),
