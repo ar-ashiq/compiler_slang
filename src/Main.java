@@ -3,9 +3,29 @@ import slang.expressions.BinaryExpression;
 import slang.expressions.Expression;
 import slang.expressions.NumericConstant;
 import slang.expressions.UnaryExpression;
+import slang.lexer.Lexer;
+import slang.lexer.Token;
 
 public class Main {
     public static void main(String[] args) {
+//        step1AST();
+        step2PrintTokens("2 * 3 a+ (44+25- 3)");
+    }
+
+    private static void step2PrintTokens(String expression) {
+        Lexer l = new Lexer(expression);
+        Token x = l.getToken();
+        while (!Token.TOKEN_NULL.equals(x)){
+            System.out.print(x+" ");
+            if (Token.TOKEN_DOUBLE.equals(x)){
+                System.out.print(l.getNumber());
+            }
+            System.out.println();
+            x = l.getToken();
+        }
+    }
+
+    private static void step1AST(){
         Expression ex;
 //       arithmetic expression 2+3
         ex = new BinaryExpression(
